@@ -31,3 +31,4 @@ This project is licensed under the [Apache License Version 2.0, January 2004](ht
 == List of Changes
 
 * ./gradlew wrapper --gradle-version 4.8
+* double check that the IDEA project is using JDK 8 and not 10. get weird errors with 10.
