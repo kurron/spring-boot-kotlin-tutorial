@@ -9,8 +9,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension
 @SpringBootTest
 class BlogApplicationTests {
 
-	@Test
-	fun contextLoads() {
-	}
+    @Test
+    fun contextLoads() {
+    }
 
 }

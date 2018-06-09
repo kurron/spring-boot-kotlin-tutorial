@@ -14,24 +14,24 @@ import org.springframework.http.HttpStatus
 import org.springframework.test.context.junit.jupiter.SpringExtension
 
 @ExtendWith(SpringExtension::class)
-@SpringBootTest( webEnvironment = RANDOM_PORT )
-class IntegrationTests( @Autowired val restTemplate: TestRestTemplate ) {
+@SpringBootTest(webEnvironment = RANDOM_PORT)
+class IntegrationTests(@Autowired val restTemplate: TestRestTemplate) {
 
     @BeforeAll
     fun setup() {
-        println( ">> setup" )
+        println(">> setup")
     }
 
     @AfterAll
     fun teardown() {
-        println( ">> teardown" )
+        println(">> teardown")
     }
 
     @Test
     fun `Assert blog page title, content and status code`() {
         val entity = restTemplate.getForEntity<String>("/")
-        assertThat( entity.statusCode ).isEqualTo( HttpStatus.OK )
-        assertThat( entity.body ).contains( "<h1>Blog</h1>" )
+        assertThat(entity.statusCode).isEqualTo(HttpStatus.OK)
+        assertThat(entity.body).contains("<h1>Blog</h1>")
     }
 
     @Test

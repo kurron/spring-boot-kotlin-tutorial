@@ -9,6 +9,6 @@ class BlogApplication
 
 fun main(args: Array<String>) {
     runApplication<BlogApplication>(*args) {
-        setBannerMode( OFF )
+        setBannerMode(OFF)
     }
 }

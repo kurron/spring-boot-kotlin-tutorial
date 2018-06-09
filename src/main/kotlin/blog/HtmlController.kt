@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping
 @Controller
 class HtmlController {
 
-    @GetMapping( "/" )
-    fun blog( model: Model): String {
+    @GetMapping("/")
+    fun blog(model: Model): String {
         model["title"] = "Blog" // extension function instead of model.addAttribute("title", "Blog")
         return "blog"
     }
