@@ -22,7 +22,7 @@ class RepositoriesTests(@Autowired val entityManager: TestEntityManager,
         entityManager.persist( article )
         entityManager.flush()
 
-        val found = articleRepository.findById( article.id!! )
+        val found = articleRepository.findById( article.id!! ) // the not-null assertion operator (!!) converts any value to a non-null type and throws an exception if the value is null
         assertThat( found.get() ).isEqualTo( article )
     }
 
