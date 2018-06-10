@@ -23,7 +23,7 @@ data class Article(
 @Entity
 data class User(
         @Id val login: String,
-        val firstame: String,
+        val firstname: String,
         val lastname: String,
         val description: String? = null
 )
