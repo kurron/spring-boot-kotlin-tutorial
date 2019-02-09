@@ -34,13 +34,12 @@ class HtmlController( private val repository: ArticleRepository, private val mar
             val id: Long?,
             val addedAt: String)
 
-    //TODO: can we use "map" constructor instead?
     fun Article.render() = RenderedArticle(
-            title,
-            markdownConverter.invoke(headline),
-            markdownConverter.invoke(content),
-            author,
-            id,
-            addedAt.format()
+            title = title,
+            headline = markdownConverter.invoke(headline),
+            content = markdownConverter.invoke(content),
+            author = author,
+            id = id,
+            addedAt = addedAt.format()
     )
 }

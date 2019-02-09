@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean
 @SpringBootApplication
 class BlogApplication {
     @Bean
-    fun mustacheCompiler( loader: Mustache.TemplateLoader? ) = Mustache.compiler().escapeHTML( false ).withLoader( loader )
+    fun mustacheCompiler( loader: Mustache.TemplateLoader? ) = Mustache.compiler().escapeHTML( false ).withLoader( loader )!!
 
     @Bean
     fun databaseInitializer( userRepository: UserRepository, articleRepository: ArticleRepository ) = CommandLineRunner {

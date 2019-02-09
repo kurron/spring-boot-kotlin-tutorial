@@ -51,6 +51,8 @@ dependencies {
     compile("com.atlassian.commonmark:commonmark:${commonmarkVersion}")
     compile("com.atlassian.commonmark:commonmark-ext-autolink:${commonmarkVersion}")
     runtime('com.h2database:h2')
+
+    // got the proper JUnit dependencies
     testCompile('org.springframework.boot:spring-boot-starter-test') {
         exclude module: 'junit'
     }
@@ -59,5 +61,6 @@ dependencies {
 }
 
 test {
+    // enables native JUnit 5 support
     useJUnitPlatform()
 }

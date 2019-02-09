@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatterBuilder
 import java.time.temporal.ChronoField
 import java.util.Locale
 
-fun LocalDateTime.format() = this.format(englishDateFormatter)
+fun LocalDateTime.format() = this.format(englishDateFormatter)!!
 
 private fun getOrdinal(n: Int) = when {
     n in 11..13 -> "${n}th"
