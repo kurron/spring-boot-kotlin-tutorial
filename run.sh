@@ -11,6 +11,7 @@ CMD="docker run --hostname spring-boot-kotlin \
                 --group-add ${DOCKER_GROUP_ID} \
                 --env HOME=${HOME_DIR} \
                 --interactive \
+                --net host \
                 --name spring-boot-kotlin \
                 --rm \
                 --tty \
