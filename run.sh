@@ -21,7 +21,7 @@ CMD="docker run --hostname spring-boot-kotlin \
                 --volume /etc/passwd:/etc/passwd \
                 --volume /etc/group:/etc/group \
                 --workdir $(pwd) \
-                kurron/docker-amazon-jdk-8-build \
+                kurron/docker-amazon-jdk-8 \
 		./gradlew --console=plain \
                           --no-daemon \
                           --stacktrace \
