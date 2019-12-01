@@ -37,7 +37,7 @@ class HttpApiTests(@Autowired val mockMvc: MockMvc) {
         whenever(markdownConverter(any())).thenAnswer { it.arguments[0] }
         mockMvc.perform(get("/api/article/").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk)
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("\$.[0].author.login").value(juergen.login))
                 .andExpect(jsonPath("\$.[0].id").value(spring5Article.id!!))
                 .andExpect(jsonPath("\$.[1].author.login").value(juergen.login))
@@ -51,7 +51,7 @@ class HttpApiTests(@Autowired val mockMvc: MockMvc) {
         whenever(userRepository.findAll()).thenReturn(listOf(juergen, smaldini))
         mockMvc.perform(get("/api/user/").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk)
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("\$.[0].login").value(juergen.login))
                 .andExpect(jsonPath("\$.[1].login").value(smaldini.login))
     }
