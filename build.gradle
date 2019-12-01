@@ -43,23 +43,23 @@ repositories {
 
 
 dependencies {
-    compile('org.springframework.boot:spring-boot-starter-data-jpa')
-    compile('org.springframework.boot:spring-boot-starter-mustache')
-    compile('org.springframework.boot:spring-boot-starter-web')
-    compile('com.fasterxml.jackson.module:jackson-module-kotlin')
-    compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    compile("org.jetbrains.kotlin:kotlin-reflect")
-    compile("com.atlassian.commonmark:commonmark:${commonmarkVersion}")
-    compile("com.atlassian.commonmark:commonmark-ext-autolink:${commonmarkVersion}")
-    runtime('com.h2database:h2')
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    implementation('org.springframework.boot:spring-boot-starter-mustache')
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('com.fasterxml.jackson.module:jackson-module-kotlin')
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("com.atlassian.commonmark:commonmark:${commonmarkVersion}")
+    implementation("com.atlassian.commonmark:commonmark-ext-autolink:${commonmarkVersion}")
+    runtimeOnly('com.h2database:h2')
 
     // got the proper JUnit dependencies
-    testCompile('org.springframework.boot:spring-boot-starter-test') {
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude module: 'junit'
     }
     testImplementation('org.junit.jupiter:junit-jupiter-api')
     testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine')
-    testCompile("com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}")
+    testImplementation("com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}")
 
     // allows IDEs to map the values in the application.properties file to code
     kapt("org.springframework.boot:spring-boot-configuration-processor")
